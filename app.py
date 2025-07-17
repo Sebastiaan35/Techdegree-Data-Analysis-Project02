@@ -53,6 +53,10 @@ def balance_teams(player_dict_list_input):
         for j in range(int(players_per_team/2)):
             team_player_dicy[teamy].append(experienced_players[j+i*int(players_per_team/2)])
             team_player_dicy[teamy].append(inexperienced_players[j+i*int(players_per_team/2)])
+        # ChatGPT was queried for inplace sorting of this type of list and the
+        # resulting formula was modified for this purpose
+        # Sorting from tallest to shortest
+        team_player_dicy[teamy].sort(key=lambda p: p['height'], reverse=True)
         height = 0
         guardians = []
         players = []
